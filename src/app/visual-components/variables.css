@@ -1,0 +1,99 @@
+:root {
+  --vertical-rythm: 4px;
+  --px: var(--vertical-rythm);
+  --2px: calc(var(--px) * 2);
+  --3px: calc(var(--px) * 3);
+  --4px: calc(var(--px) * 4);
+  --5px: calc(var(--px) * 5);
+  --6px: calc(var(--px) * 6);
+  --7px: calc(var(--px) * 7);
+  --8px: calc(var(--px) * 8);
+  --9px: calc(var(--px) * 9);
+  --10px: calc(var(--px) * 10);
+  --35px: calc(var(--px) * 35);
+  --60px: calc(var(--px) * 60);
+}
+
+/* Color */
+:root {
+  /* Gray */
+  --color-gray-dark: #203a56;
+  --color-gray: #4d6178;
+  --color-gray-light: #8391a1;
+  --color-gray-lighter: #e9ebed;
+  --color-gray-lightest: #f4f5f6;
+
+  /* Blue */
+  --color-blue-dark: #102e9c;
+  --color-blue: #047af0;
+  --color-blue-light: #4a90e2;
+  --color-blue-lightest: #f5f6fa;
+
+  /* Red */
+  --color-red: #ee536e;
+  --color-red-light: #ee536e;
+
+  /* Green */
+  --color-green: #13cf94;
+  --color-green-light: #15cc88;
+
+  /* Yellow */
+  --color-yellow: #f5ab33;
+  --color-yellow-light: #f5ab33;
+}
+
+:root {
+  --color-success: var(--color-green);
+  --color-warning: var(--color-yellow);
+  --color-danger: var(--color-red);
+}
+
+/* Brand */
+:root {
+  --color-primary: var(--color-red);
+  --color-secondary: var(--color-blue);
+}
+
+:root {
+  --color-border-color: var(--color-gray-lighter);
+  --color-link-color: var(--color-blue-light);
+}
+
+/* Text Color */
+:root {
+  --text-color-darker: var(--color-gray-dark);
+  --text-color-dark: var(--color-gray);
+  --text-color-light: var(--color-gray-light);
+}
+
+:root {
+  --border-radius-sm: 2px;
+  --border-radius-md: 3px;
+  --border-radius-lg: 6px;
+}
+
+:root {
+  --font-family-primary: 'Playfair Display', serif;
+  --font-family-seconday: 'Source Sans Pro', sans-serif;
+}
+
+/* Z-index */
+:root {
+  --layer-ug-1: -10;
+  --layer-ground: 1;
+  --layer-floor-1: 10;
+  --layer-floor-2: 20;
+  --layer-floor-3: 30;
+  --layer-floor-4: 40;
+  --layer-floor-5: 50;
+  --layer-floor-6: 60;
+}
+
+:root {
+  --z-body: var(--layer-ground);
+  --z-backdrop: var(--layer-floor-3);
+  --z-modal: var(--layer-floor-4);
+  --z-popover: var(--layer-floor-5);
+  --z-dialog: var(--layer-floor-5);
+  --z-toasts: var(--layer-floor-6);
+}

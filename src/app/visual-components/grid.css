@@ -1,0 +1,213 @@
+@import './variables.css';
+
+.row {
+  display: flex;
+}
+
+.row--inline {
+  display: inline-flex;
+}
+
+.row--vcenter {
+  align-items: center;
+}
+
+.row--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.row--height-full {
+  height: 100%;
+}
+
+.col--align-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+/*calc((100 / 12) * 8);*/
+.col--1 {
+  width: 8.34%;
+}
+
+.col--2 {
+  width: 16.67%;
+}
+
+.col--3 {
+  width: 25%;
+}
+
+.col--4 {
+  width: 33.34%;
+}
+
+.col--5 {
+  width: 41.67%;
+}
+
+.col--6 {
+  width: 50%;
+}
+
+.col--7 {
+  width: 58.34%;
+}
+
+.col--8 {
+  width: 66.67%;
+}
+
+.col--10 {
+  width: 83.34%;
+}
+
+.col--12 {
+  width: 100%;
+}
+
+.space--1px {
+  margin-right: var(--px);
+}
+
+.space {
+  display: inline-block;
+}
+
+.space--2px {
+  margin-right: var(--2px);
+}
+
+.space--3px {
+  margin-right: var(--3px);
+}
+
+.space--4px {
+  margin-right: var(--4px);
+}
+
+.space--5px {
+  margin-right: var(--5px);
+}
+
+.space--6px {
+  margin-right: var(--6px);
+}
+
+.space--7px {
+  margin-right: var(--7px);
+}
+
+.space--8px {
+  margin-right: var(--8px);
+}
+
+.space--9px {
+  margin-right: var(--9px);
+}
+
+.space--10px {
+  margin-right: var(--10px);
+}
+
+.space--vertical {
+  display: block;
+}
+
+.space--1px.space--vertical {
+  margin-bottom: var(--px);
+}
+
+.space--2px.space--vertical {
+  margin-bottom: var(--2px);
+}
+
+.space--3px.space--vertical {
+  margin-bottom: var(--3px);
+}
+
+.space--4px.space--vertical {
+  margin-bottom: var(--4px);
+}
+
+.space--5px.space--vertical {
+  margin-bottom: var(--5px);
+}
+
+.space--6px.space--vertical {
+  margin-bottom: var(--6px);
+}
+
+.space--7px.space--vertical {
+  margin-bottom: var(--7px);
+}
+
+.space--8px.space--vertical {
+  margin-bottom: var(--8px);
+}
+
+.space--9px.space--vertical {
+  margin-bottom: var(--9px);
+}
+
+.space--10px.space--vertical {
+  margin-bottom: var(--10px);
+}
+
+.space--35px.space--vertical {
+  margin-bottom: var(--35px);
+}
+
+.space--60px.space--vertical {
+  margin-bottom: var(--60px);
+}
+
+.space--around-2px {
+  padding: var(--2px);
+}
+
+.space--around-3px {
+  padding: var(--3px);
+}
+
+.space--around-4px {
+  padding: var(--4px);
+}
+
+.space--around-6px {
+  padding: var(--6px);
+}
+
+.space--around-8px {
+  padding: var(--8px);
+}
+
+.grid {
+  display: grid;
+  grid-gap: var(--2px);
+  grid-template-columns: repeat(auto-fill, 318px);
+}
+
+.position {
+  position: absolute;
+  width: 100%;
+}
+
+.position--center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.position--top {
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.u-prevent-margin-collapse:before,
+.u-prevent-margin-collapse::after {
+  content: ' ';
+  display: table;
+}

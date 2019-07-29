@@ -1,0 +1,112 @@
+@import './variables.css';
+
+:root {
+  --image-boader-radius: var(--border-radius-lg);
+  --image-boader-color: var(--color-border-color);
+  --image-bg: var(--color-gray-lightest);
+}
+
+.image-wrapper {
+  position: relative;
+  cursor: default;
+  width: 100%;
+  text-align: center;
+}
+
+.image-wrapper__button {
+  width: 100%;
+}
+
+.image-wrapper,
+.image-wrapper__button,
+.image__selected {
+  padding: 0;
+  margin: 0;
+  display: block;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+
+.image-wrapper__button:focus {
+  outline: 1px var(--color-gray-light) dashed;
+}
+
+.image-wrapper__button:active {
+  outline: none;
+}
+
+.image-wrapper--full-screen,
+.image-wrapper--full-screen .image-wrapper__button {
+  height: 100%;
+}
+
+.image-wrapper__button--clickable {
+  cursor: pointer;
+}
+
+.gallery {
+  --image-thump-width: 124px;
+  --image-thump-height: 124px;
+
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(var(--image-thump-width), 1fr)
+  );
+}
+
+@media (min-width: 800px) {
+  .gallery--scale-size-with-screen {
+    --image-thump-width: 280px;
+    --image-thump-height: 200px;
+  }
+}
+
+
+
+.image {
+  max-width: 100%;
+  object-fit: cover;
+  display: flex;
+  text-align: center;
+}
+
+.image--style-tump {
+  height: var(--image-thump-height);
+  width: 100%;
+  background: var(--image-bg);
+  object-fit: cover;
+}
+
+.image--style-small {
+  height: 100px;
+}
+
+.image--style-full-screen {
+  height: 100%;
+  margin: 0 auto;
+}
+
+.image__mini-loader,
+.image__error-icon {
+  position: absolute;
+  top: var(--px);
+}
+
+.image__mini-loader {
+  right: var(--px);
+}
+
+.image__error-icon {
+  left: var(--px);
+}
+
+.image__selected {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  padding: var(--2px) var(--2px) var(--6px) var(--6px);
+  cursor: pointer;
+}

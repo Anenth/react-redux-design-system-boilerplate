@@ -1,0 +1,103 @@
+@import './variables.css';
+
+:root {
+  --icon-size-sm: 16px;
+  --icon-size-md: 24px;
+  --icon-size-lg: 32px;
+  --icon-size-xlg: 64px;
+}
+
+.icon {
+  display: inline-block;
+}
+
+.icon--size-sm,
+.icon--size-sm svg {
+  width: var(--icon-size-sm);
+  height: var(--icon-size-sm);
+}
+
+.icon--size-md,
+.icon--size-md svg {
+  width: var(--icon-size-md);
+  height: var(--icon-size-md);
+}
+
+.icon--size-lg,
+.icon--size-lg svg {
+  width: var(--icon-size-lg);
+  height: var(--icon-size-lg);
+}
+
+.icon--size-xlg,
+.icon--size-xlg svg {
+  width: var(--icon-size-xlg);
+  height: var(--icon-size-xlg);
+}
+
+:root {
+  --icon-folder-color: var(--color-gray-lighter);
+  --icon-folder-primary-alt-fill-color: var(--color-blue);
+  --icon-folder-primary-color: var(--color-blue-light);
+  --icon-folder-primary-fill-color: #dcedfe;
+  --icon-folder-secondary-color: var(--color-yellow-light);
+  --icon-folder-tertiary-color: var(--color-green-light);
+}
+
+.icon-folder {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.icon-folder--size-md {
+  height: var(--icon-size-md);
+}
+
+.icon-folder--size-lg {
+  height: var(--icon-size-lg);
+}
+
+.icon-folder path {
+  fill: var(--icon-folder-color);
+}
+
+.icon-folder--style-primary path {
+  fill: var(--icon-folder-primary-fill-color);
+}
+
+.icon-folder--style-primary-alt path {
+  fill: var(--icon-folder-primary-alt-fill-color);
+}
+
+/*Last-child is the folder-slip thing on the top */
+.icon-folder--style-primary path:last-child,
+.icon-folder--style-primary-alt path:last-child {
+  fill: var(--icon-folder-primary-color);
+}
+
+.icon-folder--style-secondary path:last-child {
+  fill: var(--icon-folder-secondary-color);
+}
+
+.icon-folder--style-tertiary path:last-child {
+  fill: var(--icon-folder-tertiary-color);
+}
+
+.icon-folder__icon {
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.icon-folder__icon svg {
+  width: 12px;
+  height: 12px;
+}
+
+.logo {
+  width: 120px;
+}

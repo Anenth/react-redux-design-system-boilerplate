@@ -1,0 +1,75 @@
+@import "./variables.css";
+
+.color--shade-darker {
+  color: var(--text-color-darker);
+}
+
+.color--shade-dark {
+  color: var(--text-color-dark);
+}
+
+.color--fill-solid-icon--shade-dark path {
+  fill: var(--text-color-dark);
+}
+
+.color--shade-light {
+  color: var(--text-color-light);
+}
+
+.color--fill-solid-icon--shade-light path {
+  fill: var(--text-color-light);
+}
+
+.color--fill-solid-icon--shade-blue-light path {
+  fill: var(--color-blue-light);
+}
+
+.color--fill-solid-icon--shade-warning path {
+  fill: var(--color-warning);
+}
+
+.color--shade-primary,
+.color--shade-primary a {
+  color: var(--color-primary);
+}
+
+.color--shade-seconday,
+.color--shade-seconday a {
+  color: var(--color-secondary);
+}
+
+.color--shade-blue,
+.color--shade-blue a {
+  color: var(--color-blue);
+}
+
+.color--shade-blue-light,
+.color--shade-blue-light a {
+  color: var(--color-blue-light);
+}
+
+.color--shade-success,
+.color--shade-success a {
+  color: var(--color-success);
+}
+
+.color--shade-warning {
+  color: var(--color-warning);
+}
+
+.color--shade-danger {
+  color: var(--color-danger);
+}
+
+.color--shade-white {
+  color: #fff;
+}
+
+.color--inline {
+  display: inline-flex;
+}
+
+.color--disabled {
+  opacity: 0.6;
+  display: inline-flex;
+}

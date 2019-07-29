@@ -1,0 +1,115 @@
+@import './variables.css';
+
+/* Weight */
+:root {
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-normal: 400;
+}
+
+.text--boldness-bold {
+  font-weight: var(--font-weight-bold);
+}
+
+.text--boldness-semibold {
+  font-weight: var(--font-weight-semi-bold);
+}
+
+.text--boldness-normal {
+  font-weight: var(--font-weight-normal);
+}
+
+/* Size */
+:root {
+  --text-size-1: 28px;
+  --text-size-1-lh: 34px;
+  --text-size-2: 20px;
+  --text-size-2-lh: 36px;
+  --text-size-3: 16px;
+  --text-size-3-lh: 24px;
+  --text-size-4: 14px;
+  --text-size-4-lh: 20px;
+  --text-size-5: 12px;
+  --text-size-5-lh: 14px;
+  --text-size-6: 10px;
+  --text-size-6-lh: 14px;
+  --text-size-1-lg: 64px;
+  --text-size-1-lg-lh: 64px;
+  --text-size-phone-1-lg: 42px;
+  --text-size-phone-1-lg-lh: 42px;
+}
+
+.text {
+  font-family: var(--font-family-seconday);
+  -webkit-user-select: none;
+}
+
+.text--primary-style {
+  font-family: var(--font-family-primary);
+}
+
+.text--size-1 {
+  font-size: var(--text-size-1);
+  line-height: var(--text-size-1-lh);
+}
+
+.text--size-2 {
+  font-size: var(--text-size-2);
+  line-height: var(--text-size-2-lh);
+}
+
+.text--size-3 {
+  font-size: var(--text-size-3);
+  line-height: var(--text-size-3-lh);
+}
+
+.text--size-4 {
+  font-size: var(--text-size-4);
+  line-height: var(--text-size-4-lh);
+}
+
+.text--size-5 {
+  font-size: var(--text-size-5);
+  line-height: var(--text-size-5-lh);
+}
+
+.text--size-6 {
+  font-size: var(--text-size-6);
+  line-height: var(--text-size-6-lh);
+}
+
+.text--size-1-lg {
+  font-size: var(--text-size-phone-1-lg);
+  line-height: var(--text-size-phone-1-lg-lh);
+}
+
+@media (min-width: 800px) {
+  .text--size-1-lg {
+    font-size: var(--text-size-1-lg);
+    line-height: var(--text-size-1-lg-lh);
+  }
+}
+
+.sub-title {
+  text-transform: uppercase;
+}
+
+.text--display-block {
+  display: block;
+}
+
+.text--ellipsis {
+  width: 100%;
+  display: inline-block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.text--align-center {
+  text-align: center;
+}
+
+.text--strick-off {
+  text-decoration: line-through;
+}

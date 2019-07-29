@@ -1,0 +1,180 @@
+@import './variables.css';
+
+:root {
+  --input-border: var(--color-border-color);
+  --input-border-focus: var(--color-gray-light);
+  --input-padding: var(--3px);
+  --input-border-danger: var(--color-danger);
+}
+
+.input {
+  width: 100%;
+  font-family: var(--font-family-seconday);
+  padding: var(--input-padding);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-color-darker);
+  border: 1px solid var(--input-border);
+  transition: border-color 0.2s ease-in;
+  outline: none;
+}
+
+.input::placeholder {
+  color: var(--text-color-light);
+}
+
+.input:hover,
+.input:focus {
+  border-color: var(--input-border-focus);
+}
+
+.input--error {
+  border-color: var(--input-border-danger);
+}
+
+.form-group {
+  margin-bottom: var(--4px);
+}
+
+.input-file-dropzone {
+  padding: var(--4px);
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(78, 162, 246, 0.05);
+  transition: background 0.3s ease-in;
+  border: 1px solid var(--color-blue-light);
+  border-radius: var(--border-radius-lg);
+  text-align: center;
+}
+
+.input-file-dropzone:hover,
+.input-file-dropzone:focus {
+  background: #fff;
+}
+
+.input-file-dropzone--large {
+  height: 400px;
+}
+
+.input-file-dropzone--danger {
+  border-color: var(--color-red);
+  background: #ffe1e6;
+}
+
+.input-file-dropzone--active {
+  border-width: 2px;
+  border-style: dashed;
+}
+
+.checkbox {
+  width: var(--5px);
+  height: var(--5px);
+  border-radius: 50%;
+  border: 1px solid var(--color-gray);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background-color .2s ease-in, border-color .2s ease-in, transform 150ms ease-out;
+  box-shadow: 1px 1px 5px rgba(0, 0,0, 0.2);
+}
+
+button:hover .checkbox,
+button:focus .checkbox,
+.checkbox:hover,
+.checkbox:focus {
+  background: rgba(255, 255, 255, 0.9);
+  transform: scale(1.2);
+}
+
+.checkbox--checked {
+  border-color: var(--color-success);
+  background: var(--color-success);
+}
+
+button:hover .checkbox--checked,
+button:focus .checkbox--checked,
+.checkbox--checked:hover,
+.checkbox--checked:focus {
+  background: var(--color-success);
+}
+
+.checkbox__icon {
+  color: #fff;
+  display: none;
+  margin-top: var(--px);
+}
+
+.checkbox--checked .checkbox__icon {
+  display: block;
+}
+
+.checkbox input {
+  opacity: 0;
+  position: absolute;
+  cursor: pointer;
+}
+
+:root {
+  --toggle-switch-bg: var(--color-gray-lightest);
+  --toggle-switch-active-bg: var(--color-success);
+  --toggle-switch-thumb-bg: var(--color-gray-light);
+}
+
+.toggle-switch {
+  position: relative;
+  transition: opacity 0.2s ease-in;
+}
+
+.toggle-switch__input,
+.toggle-switch__well {
+  width: 34px;
+  height: 20px;
+}
+
+.toggle-switch__input {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  z-index: 1;
+  opacity: 0;
+}
+
+.toggle-switch__well,
+.toggle-switch__thumb {
+  position: absolute;
+  top: 0;
+  display: block;
+  visibility: visible;
+  border-radius: 100px;
+  transition: all 0.2s ease-in;
+}
+
+.toggle-switch__well {
+  background: var(--toggle-switch-bg);
+}
+
+.toggle-switch__thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 14px;
+  height: 14px;
+  background: var(--toggle-switch-thumb-bg);
+}
+
+.toggle-switch__thumb--right {
+  left: 17px;
+  background: var(--toggle-switch-active-bg);
+}
+
+.toggle-switch--disabled {
+  opacity: 0.3;
+}
+
+.file-uploader-input {
+  display: none;
+}

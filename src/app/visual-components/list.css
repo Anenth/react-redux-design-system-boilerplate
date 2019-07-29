@@ -1,0 +1,43 @@
+@import "./variables.css";
+
+:root {
+  --list-item-hover-bg: #fff;
+  --list-item-border-color: var(--color-border-color);
+}
+
+.list-item {
+  --bottom-padding: calc(var(--3px) - 1px);
+
+  display: flex;
+  align-items: center;
+  padding: var(--3px) var(--4px) var(--bottom-padding);
+  border-bottom: 1px solid var(--list-item-border-color);
+  text-decoration: none;
+}
+
+.list-item:hover,
+.list-item:focus,
+.list-item--active {
+  color: var(--color-link-active);
+  background: var(--list-item-hover-bg);
+  text-decoration: none;
+}
+
+.list-item__header {
+  --bottom-padding: calc(var(--2px) - 1px);
+
+  padding: var(--5px) var(--4px) var(--bottom-padding);
+  border-bottom: 1px solid var(--list-item-border-color);
+}
+
+.list-item__icon {
+  display: inline-flex;
+  align-items: center;
+  padding-right: var(--2px);
+  height: 24px;
+}
+
+.list-item__footer {
+  padding: var(--3px) var(--4px);
+  background: #fff;
+}

@@ -1,0 +1,20 @@
+@import "./variables.css";
+
+:root {
+  --card-space: var(--6px);
+}
+
+.card {
+  border-radius: var(--border-radius-sm);
+}
+
+.card--style-primary {
+  background: #fff;
+  border: 1px solid var(--color-border-color);
+}
+
+.card--style-secondary {
+  min-height: 220px;
+  background: var(--color-gray-lightest);
+}
+
