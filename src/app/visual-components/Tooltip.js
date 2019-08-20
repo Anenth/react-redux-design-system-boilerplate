@@ -40,7 +40,7 @@ const PlacementStyles = {
 type ToolTipBoxProps = {
   children: React.Node,
   placement?: 'left' | 'right' | 'top' | 'bottom',
-  style: {},
+  style?: {},
 };
 
 const ToolTipBox = (props: ToolTipBoxProps) => {
@@ -99,9 +99,14 @@ export default class Tooltip extends React.Component<Props, StateType> {
           show={this.state.show}
           onHide={() => this.setState({ show: false })}
           placement={this.props.placement}
-          target={this.node}
+          container={this}
+          target={() => this.node}
         >
-          <ToolTipBox placement={this.props.placement}>{this.props.message}</ToolTipBox>
+          {({ props }) => (
+            <ToolTipBox placement={this.props.placement} style={props.inner}>
+              {this.props.message}
+            </ToolTipBox>
+          )}
         </OverlayLib>
       </React.Fragment>
     );

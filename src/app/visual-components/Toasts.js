@@ -57,21 +57,13 @@ export default class ToastContainer extends Component<Props, State> {
           {this.state.toasts.map(toast => (
             <div
               key={toast.id}
-              className={ClassNames(
-                styles.toast,
-                styles[`toast--${toast.status}`],
-              )}
+              className={ClassNames(styles.toast, styles[`toast--${toast.status}`])}
               role="button"
               tabIndex={0}
               onKeyPress={() => this.removeToastMessage(toast.id)}
               onClick={() => this.removeToastMessage(toast.id)}
             >
-              <div
-                className={ClassNames(
-                  styles.toast__icon,
-                  styles[`toast__icon--${toast.status}`],
-                )}
-              >
+              <div className={ClassNames(styles.toast__icon, styles[`toast__icon--${toast.status}`])}>
                 <Icon name={TOAST_ICONS[toast.status]} />
               </div>
               <div className={styles.toast__content}>{toast.message}</div>

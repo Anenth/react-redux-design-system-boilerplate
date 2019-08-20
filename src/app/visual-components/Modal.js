@@ -14,14 +14,14 @@ import Text, { TEXT_BOLDNESS, TEXT_SIZE } from './Text';
 export const MODAL_SIZES = {
   SM: 'sm',
   MD: 'md',
-  LG: 'lg'
+  LG: 'lg',
 };
 
 type ModalProps = {
   children: React.Node,
   show: boolean,
   close: ?Function,
-  size: $Values<typeof MODAL_SIZES>
+  size?: $Values<typeof MODAL_SIZES>,
 };
 
 const modalStyle = {
@@ -30,7 +30,8 @@ const modalStyle = {
   top: 0,
   bottom: 0,
   left: 0,
-  right: 0
+  right: 0,
+  boxShadow: '0 5px 15px rgba(0, 0, 0, .5)',
 };
 
 export default function Modal(props: ModalProps) {
@@ -38,39 +39,31 @@ export default function Modal(props: ModalProps) {
 
   return (
     <ModalLib
-      backdropClassName={styles.backdrop}
+      renderBackdrop={backdropProps => <div {...backdropProps} className={styles.backdrop} />}
       containerClassName={styles['modal--open']}
       show={show}
       style={modalStyle}
       onHide={close}
     >
       <ErrorBoundary>
-        <div
-          className={ClassNames(
-            styles.modal__content,
-            styles[`modal__content--size-${size}`]
-          )}
-        >
-          {children}
-        </div>
+        <div className={ClassNames(styles.modal__content, styles[`modal__content--size-${size}`])}>{children}</div>
       </ErrorBoundary>
     </ModalLib>
   );
 }
 
+Modal.defaultProps = {
+  size: MODAL_SIZES.MD,
+};
+
 type ModalTitleProps = {
-  children: React.Node
+  children: React.Node,
 };
 
 export function ModalTitle(props: ModalTitleProps) {
   return (
     <div>
-      <Text
-        size={TEXT_SIZE.SIZE_2}
-        boldness={TEXT_BOLDNESS.BOLD}
-        color={COLOR_SHADES.DARKER}
-        block
-      >
+      <Text size={TEXT_SIZE.SIZE_2} boldness={TEXT_BOLDNESS.BOLD} color={COLOR_SHADES.DARKER} block>
         {props.children}
       </Text>
       <Space vertical />
@@ -81,18 +74,18 @@ export function ModalTitle(props: ModalTitleProps) {
 type MediaModalProps = {
   children: React.Node,
   show: boolean,
-  close: Function
+  close: Function,
 };
 
 export function MediaModal(props: MediaModalProps) {
   const { children, show, close } = props;
 
   const keyMap = {
-    close: 'esc'
+    close: 'esc',
   };
 
   const handlers = {
-    close: () => close()
+    close: () => close(),
   };
 
   return (
@@ -108,7 +101,7 @@ export function MediaModal(props: MediaModalProps) {
           }, 0)
         }
         className={ClassNames(styles['media-modal'], {
-          [styles['media-modal--show']]: show
+          [styles['media-modal--show']]: show,
         })}
       >
         {show && children}
@@ -118,7 +111,7 @@ export function MediaModal(props: MediaModalProps) {
 }
 
 type MediaModalContentProps = {
-  children: React.Node
+  children: React.Node,
 };
 
 export function MediaModalContent(props: MediaModalContentProps) {
@@ -129,7 +122,7 @@ export function MediaModalContent(props: MediaModalContentProps) {
 }
 
 type MediaModalHeaderProps = {
-  children: React.Node
+  children: React.Node,
 };
 
 export function MediaModalHeader(props: MediaModalHeaderProps) {
@@ -140,7 +133,7 @@ export function MediaModalHeader(props: MediaModalHeaderProps) {
 }
 
 type MediaModalHeaderActionsProps = {
-  children: React.Node
+  children: React.Node,
 };
 
 export function MediaModalHeaderActions(props: MediaModalHeaderActionsProps) {
@@ -152,16 +145,16 @@ export function MediaModalHeaderActions(props: MediaModalHeaderActionsProps) {
 
 type MediaModalNavigatorProps = {
   children: React.Node,
-  isRight?: boolean
+  isRight?: boolean,
 };
 
 MediaModalNavigator.defaultProps = {
-  isRight: false
+  isRight: false,
 };
 
 export function MediaModalNavigator(props: MediaModalNavigatorProps) {
   const classes = ClassNames(styles['media-modal__naviator'], {
-    [styles['media-modal__naviator--right']]: props.isRight
+    [styles['media-modal__naviator--right']]: props.isRight,
   });
 
   return <div className={classes}>{props.children}</div>;

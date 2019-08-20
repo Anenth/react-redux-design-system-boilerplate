@@ -7,14 +7,14 @@ import { Overlay as OverlayLib } from 'react-overlays';
 const PopoverStyle = {
   position: 'absolute',
   padding: '0 5px',
-  minWidth: '300px'
+  minWidth: '300px',
 };
 
 const PopoverInnerStyle = {
   padding: '16px',
   borderRadius: 4,
   backgroundColor: '#fff',
-  boxShadow: '0 0 12px 2px #e9ebed'
+  boxShadow: '0 0 12px 2px #e9ebed',
 };
 
 const TooltipArrowStyle = {
@@ -25,7 +25,7 @@ const TooltipArrowStyle = {
   borderLeftColor: 'transparent',
   borderTopColor: 'transparent',
   borderBottomColor: 'transparent',
-  borderStyle: 'solid'
+  borderStyle: 'solid',
 };
 
 const PlacementStyles = {
@@ -35,8 +35,8 @@ const PlacementStyles = {
       right: 0,
       marginTop: -5,
       borderWidth: '5px 0 5px 5px',
-      borderLeftColor: '#fff'
-    }
+      borderLeftColor: '#fff',
+    },
   },
   right: {
     tooltip: { marginRight: 3, padding: '0 5px' },
@@ -44,8 +44,8 @@ const PlacementStyles = {
       left: 0,
       marginTop: -5,
       borderWidth: '5px 5px 5px 0',
-      borderRightColor: '#fff'
-    }
+      borderRightColor: '#fff',
+    },
   },
   top: {
     tooltip: { marginTop: -3, padding: '5px 0' },
@@ -53,8 +53,8 @@ const PlacementStyles = {
       bottom: 0,
       marginLeft: -5,
       borderWidth: '5px 5px 0',
-      borderTopColor: '#fff'
-    }
+      borderTopColor: '#fff',
+    },
   },
   bottom: {
     tooltip: { marginBottom: 3, padding: '5px 0' },
@@ -62,9 +62,9 @@ const PlacementStyles = {
       top: 0,
       marginLeft: -5,
       borderWidth: '0 5px 5px',
-      borderBottomColor: '#fff'
-    }
-  }
+      borderBottomColor: '#fff',
+    },
+  },
 };
 
 type PopoverBoxProps = {
@@ -72,7 +72,7 @@ type PopoverBoxProps = {
   placement?: 'left' | 'right' | 'top' | 'bottom',
   style: {},
   arrowOffsetLeft: any,
-  arrowOffsetTop: any
+  arrowOffsetTop: any,
 };
 
 const PopoverBox = (props: PopoverBoxProps) => {
@@ -82,28 +82,26 @@ const PopoverBox = (props: PopoverBoxProps) => {
     style,
     arrowOffsetLeft: left = placementStyle.arrow.left,
     arrowOffsetTop: top = placementStyle.arrow.top,
-    children
+    children,
   } = props;
 
   return (
     <div style={{ ...PopoverStyle, ...placementStyle.tooltip, ...style }}>
-      <div
-        style={{ ...TooltipArrowStyle, ...placementStyle.arrow, left, top }}
-      />
+      <div style={{ ...TooltipArrowStyle, ...placementStyle.arrow, left, top }} />
       <div style={PopoverInnerStyle}>{children}</div>
     </div>
   );
 };
 
 PopoverBox.defaultProps = {
-  placement: 'top'
+  placement: 'top',
 };
 
 type Props = {
   children: React.Node,
   placement?: 'left' | 'right' | 'top' | 'bottom',
   target: any,
-  show: boolean
+  show: boolean,
 };
 
 export default function Popover(props: Props) {
@@ -121,5 +119,5 @@ export default function Popover(props: Props) {
 }
 
 Popover.defaultProps = {
-  placement: 'top'
+  placement: 'top',
 };
