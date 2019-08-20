@@ -22,49 +22,6 @@ const TooltipInnerStyle = {
   backgroundColor: '#000',
 };
 
-const PlacementStyles = {
-  left: {
-    tooltip: { marginLeft: -3, padding: '0 5px' },
-  },
-  right: {
-    tooltip: { marginRight: 3, padding: '0 5px' },
-  },
-  top: {
-    tooltip: { marginTop: -3, padding: '5px 0' },
-  },
-  bottom: {
-    tooltip: { marginBottom: 3, padding: '5px 0' },
-  },
-};
-
-type ToolTipBoxProps = {
-  children: React.Node,
-  placement?: 'left' | 'right' | 'top' | 'bottom',
-  style?: {},
-};
-
-const ToolTipBox = (props: ToolTipBoxProps) => {
-  const placementStyle = PlacementStyles[props.placement];
-
-  const { style, children } = props;
-
-  return (
-    <div
-      style={{
-        ...TooltipStyle,
-        ...placementStyle.tooltip,
-        ...style,
-      }}
-    >
-      <div style={TooltipInnerStyle}>{children}</div>
-    </div>
-  );
-};
-
-ToolTipBox.defaultProps = {
-  placement: 'top',
-};
-
 type Props = {
   children: React.Node,
   placement?: 'left' | 'right' | 'top' | 'bottom',
@@ -95,7 +52,6 @@ export default class Tooltip extends React.Component<Props, StateType> {
           {this.props.children}
         </span>
         <OverlayLib
-          key={this.props.message}
           show={this.state.show}
           onHide={() => this.setState({ show: false })}
           placement={this.props.placement}
@@ -103,9 +59,15 @@ export default class Tooltip extends React.Component<Props, StateType> {
           target={() => this.node}
         >
           {({ props }) => (
-            <ToolTipBox placement={this.props.placement} style={props.inner}>
-              {this.props.message}
-            </ToolTipBox>
+            <div
+              {...props}
+              style={{
+                ...TooltipStyle,
+                ...props.style,
+              }}
+            >
+              <div style={TooltipInnerStyle}>{this.props.message}</div>
+            </div>
           )}
         </OverlayLib>
       </React.Fragment>
