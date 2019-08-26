@@ -1,7 +1,7 @@
 // @flow
 import React from 'react';
 import type { Node } from 'react';
-import { Transition } from 'react-spring/renderprops';
+import { useSpring, animated } from 'react-spring';
 
 type SlideUpProps = {
   children: Node,
@@ -10,30 +10,14 @@ type SlideUpProps = {
 
 export default function SlideUp(props: SlideUpProps) {
   const { children, disable } = props;
-  if (disable) return children;
+  const style = useSpring({
+    transform: 'translate3d(0,0,0)',
+    opacity: 1,
+    from: { transform: 'translate3d(0, 60px,0)', opacity: 0 },
+  });
 
-  return (
-    <Transition
-      items
-      from={{
-        transform: 'translate3d(0, 150px,0)',
-        opacity: 0,
-      }}
-      enter={{
-        transform: 'translate3d(0, 0px,0)',
-        opacity: 1,
-      }}
-      leave={{
-        transform: 'translate3d(0, -150px,0)',
-        opacity: 0,
-      }}
-    >
-      {item =>
-        item &&
-        (animationStyles => <div style={animationStyles}>{children}</div>)
-      }
-    </Transition>
-  );
+  if (disable) return children;
+  return <animated.div style={style}>{children}</animated.div>;
 }
 
 SlideUp.defaultProps = {
@@ -42,18 +26,13 @@ SlideUp.defaultProps = {
 
 type FadeInProps = {
   children: Function,
+  disable?: boolean,
 };
 
 export function FadeIn(props: FadeInProps) {
-  const { children } = props;
-  return (
-    <Transition
-      items
-      from={{ opacity: 0 }}
-      enter={{ opacity: 1 }}
-      leave={{ opacity: 0 }}
-    >
-      {item => item && (animationStyles => children(animationStyles))}
-    </Transition>
-  );
+  const { children, disable } = props;
+  const style = useSpring({ opacity: 1, from: { opacity: 0 } });
+
+  if (disable) return children;
+  return <animated.div style={style}>{children}</animated.div>;
 }
