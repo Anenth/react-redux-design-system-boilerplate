@@ -9,7 +9,7 @@
   --button-border-padding-lg-vertical: calc(
     var(--button-padding-lg-vertical) - 1px
   );
-  --button-padding-with-border: var(--button-padding) - 1px;
+  --button-padding-with-border: calc(var(--button-padding) - 1px);
   --button-border-raduis: var(--border-radius-sm);
   --button-primary-bg: var(--color-blue);
   --button-primary-dark-bg: var(--color-gray-dark);
