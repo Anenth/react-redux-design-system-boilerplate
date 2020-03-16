@@ -65,7 +65,7 @@
     "invariant": "2.2.4",
     "ip": "1.1.5",
     "lodash": "4.17.15",
-    "minimist": "1.2.0",
+    "minimist": "1.2.2",
     "moment": "^2.24.0",
     "postcss-preset-env": "^6.7.0",
     "prop-types": "15.7.2",
