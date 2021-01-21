@@ -59,7 +59,7 @@
     "getmeformdata": "^0.3.0",
     "history": "4.9.0",
     "hoist-non-react-statics": "3.3.0",
-    "immer": "3.2.0",
+    "immer": "8.0.1",
     "immutable": "^4.0.0-rc.12",
     "intl": "1.2.5",
     "invariant": "2.2.4",
