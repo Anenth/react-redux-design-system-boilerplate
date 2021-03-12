@@ -147,7 +147,7 @@
     "pre-commit": "1.2.2",
     "prettier": "1.18.2",
     "react-app-polyfill": "1.0.2",
-    "react-dev-utils": "^9.0.1",
+    "react-dev-utils": "^11.0.4",
     "react-test-renderer": "16.9.0",
     "react-testing-library": "8.0.1",
     "rimraf": "3.0.0",
